@@ -1,0 +1,8 @@
+let g:override_spf13_bundles = 1
+
+let g:spf13_bundle_groups=['general', 'neocomplete', 'programming']
+let g:airline_powerline_fonts = 1
+
+
+
+
