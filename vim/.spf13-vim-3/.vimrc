@@ -68,14 +68,14 @@
 " }
 
 " Use before config if available {
-    if filereadable(expand("~/.vimrc.before"))
-        source ~/.vimrc.before
+    if filereadable(expand("~/.DotFiles/vim/.spf13-vim-3/.vimrc.before"))
+        source ~/.DotFiles/vim/.spf13-vim-3/.vimrc.before
     endif
 " }
 
 " Use bundles config {
-    if filereadable(expand("~/.vimrc.bundles"))
-        source ~/.vimrc.bundles
+    if filereadable(expand("~/.DotFiles/vim/.spf13-vim-3/.vimrc.bundles"))
+        source ~/.DotFiles/vim/.spf13-vim-3/.vimrc.bundles
     endif
 " }
 
@@ -1203,16 +1203,16 @@
     endfunction
      
     function! s:EditSpf13Config()
-        call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
+        call <SID>ExpandFilenameAndExecute("tabedit", "~/.DotFiles/vim/.spf13-vim-3/.vimrc")
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.DotFiles/vim/.spf13-vim-3/.vimrc.before")
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.DotFiles/vim/.spf13-vim-3/.vimrc.bundles")
      
         execute bufwinnr(".vimrc") . "wincmd w"
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
+        call <SID>ExpandFilenameAndExecute("split", "~/.DotFiles/vim/.vimrc.local")
         wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
+        call <SID>ExpandFilenameAndExecute("split", "~/.DotFiles/vim/.vimrc.before.local")
         wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
+        call <SID>ExpandFilenameAndExecute("split", "~/.DotFiles/vim/.vimrc.bundles.local")
      
         if <SID>IsSpf13Fork()
             execute bufwinnr(".vimrc") . "wincmd w"
@@ -1223,7 +1223,7 @@
             call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
         endif
      
-        execute bufwinnr(".vimrc.local") . "wincmd w"
+        execute bufwinnr("~/.DotFiles/vim/.vimrc.local") . "wincmd w"
     endfunction
      
     execute "noremap " . s:spf13_edit_config_mapping " :call <SID>EditSpf13Config()<CR>"
@@ -1237,15 +1237,15 @@
 " }
 
 " Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+    if filereadable(expand("~/.DotFiles/vim/.vimrc.local"))
+        source ~/.DotFiles/vim/.vimrc.local
     endif
 " }
 
 " Use local gvimrc if available and gui is running {
     if has('gui_running')
-        if filereadable(expand("~/.gvimrc.local"))
-            source ~/.gvimrc.local
+        if filereadable(expand("~/.DotFiles/vim/.gvimrc.local"))
+            source ~/.DotFiles/vim/.gvimrc.local
         endif
     endif
 " }

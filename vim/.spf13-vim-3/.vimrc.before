@@ -105,7 +105,7 @@
 " }
 
 " Use local before if available {
-    if filereadable(expand("~/.vimrc.before.local"))
-        source ~/.vimrc.before.local
+    if filereadable(expand("~/.DotFiles/vim/.vimrc.before.local"))
+        source ~/.DotFiles/vim/.vimrc.before.local
     endif
 " }
