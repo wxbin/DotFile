@@ -1,0 +1,66 @@
+set ignorecase
+set smartcase
+set scrolloff=3         " 3 lines above/below cursor when scrolling
+set showmode
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+let mapleader = ","
+
+imap ,. <Esc>
+vmap ,. <Esc>
+
+" Use Q for formatting the current paragraph (or visual selection)
+vmap Q gq
+nmap Q gqap
+nmap qq :q!<cr>
+nmap wq :wq!<cr>
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+" key bindings for quickly moving between windows
+" h left, l right, k up, j down
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+imap <c-j> <Down>
+imap <c-k> <Up>
+imap <c-g> <Esc> :action GotoDeclaration<cr>
+imap <c-s-g> <Esc> :action FindUsages<cr>
+imap <c-s-r> <Esc> :action GotoFile<cr>
+imap <c-s-t> <Esc> :action GotoClass<cr>
+imap <c-o> <Esc> :action FileStructurePopup<cr>
+imap <c-d> <Esc> :action EditorDeleteLine<cr>
+imap jj <Esc>
+
+vmap <c-g> <Esc> :action GotoDeclaration<cr>
+vmap <c-s-g> <Esc> :action FindUsages<cr>
+vmap <c-s-r> <Esc> :action GotoFile<cr>
+vmap <c-s-t> <Esc> :action GotoClass<cr>
+vmap <c-o> <Esc> :action FileStructurePopup<cr>
+vmap <c-d> <Esc> :action EditorDeleteLine<cr>
+
+
+nmap <c-s-r> :action GotoFile<cr>
+nmap <c-g> :action GotoDeclaration<cr>
+nmap <c-s-g> :action FindUsages<cr>
+nmap <c-o> :action FileStructurePopup<cr>
+nmap <c-s-t> :action GotoClass<cr>
+nmap <c-t> :action GotoImplementation<cr>
+nmap <leader>b :action Back<cr>
+nmap <leader>f :action Forward<cr>
+nmap <leader>ns :action GotoSymbol<cr>
+nmap <leader>ss :action Android.SyncProject<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>tt :action ActivateTerminalToolWindow<cr>
+" IdeaVim uses 'a' for alt instead of Vim's 'm'
+nmap <a-j> 15gj
+nmap <a-k> 15gk
+
+" Won't work in visual mode (with vmap) for some reason.
+" Use default map of <c-/> for that.
+nmap gcc :action CommentByLineComment<cr>
+
